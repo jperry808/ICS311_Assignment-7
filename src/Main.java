@@ -12,7 +12,7 @@ public class Main {
         g.addEdge("jett", "jacob");
         g.addEdge("jacob", "wilson");
         g.addEdge("wilson", "charles");
-        g.addEdge("jacob", "dave");
+        g.addEdge("jacob", "charles");
 
         // Jett is encrypting his message to be sent to Charles
         String secret1 = "Hi Charles, lets meet for lunch at 11:00";
@@ -30,8 +30,8 @@ public class Main {
 
         // Charles is encrypting his message to be sent to Dave
         // Because Dave and Charles have no connection, this will fail
-        String secret2 = "";
-        Message m2 = Mailer.sendEncrypted(dave, charles, secret2);
+        String secret2 = "This is a test to see if the BFS routing works";
+        Message m2 = Mailer.sendEncrypted(charles, dave, secret2);
 
         if (!Router.deliver(g, m2)) {
             System.out.println("[Charles -> Dave] No path found");
