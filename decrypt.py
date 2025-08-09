@@ -19,13 +19,13 @@ def verify(message, signature, e, n):
     else:
         return False # not authentic
 
-# Test cases, I used random numbers since problem 3 code was not done yet
+# test cases, I used random numbers since problem 3 code was not done yet
 publicKeyN = 41541548417896984719696796324813
 publicKeyE = 978162364857
 signature = 54687953687541584791486977896
 message = "Hello World!"
 
-if verify(message, signature, publicKeyE, publicKeyN):
+if verify(message, signature, publicKeyE, publicKeyN): # check if the two hashes match
     print("Message is authentic and untampered.")
 else:
     print("Message is NOT authentic.")
